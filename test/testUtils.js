@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-foreign-prop-types */
 import checkPropTypes from 'check-prop-types'
 
 export const findByTestAttr = (wrapper, val) => {
@@ -6,11 +7,11 @@ export const findByTestAttr = (wrapper, val) => {
 
 export const checkProps = (component, conformingProps) => {
 	const propError = checkPropTypes(
-		component.propTypes,
+		component.protoTypes,
 		conformingProps,
 		'prop',
 		component.name
 	)
-
+	console.log('component.protoTypes:::::::::', component.protoTypes)
 	expect(propError).toBeUndefined()
 }

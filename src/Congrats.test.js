@@ -2,7 +2,7 @@ import React from 'react'
 import Enzyme, { shallow } from 'enzyme'
 import EnzymeAdapter from 'enzyme-adapter-react-17-updated'
 import Congrats from './Congrats'
-import checkPropTypes from 'check-prop-types'
+
 import { findByTestAttr, checkProps } from '../test/testUtils'
 
 Enzyme.configure({ adapter: new EnzymeAdapter() })
