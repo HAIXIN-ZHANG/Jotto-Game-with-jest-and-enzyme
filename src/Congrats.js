@@ -39,6 +39,6 @@ class Congrats extends React.Component {
 }
 
 Congrats.protoTypes = {
-	success: PropTypes.bool.isRequired,
+	success: PropTypes.bool,
 }
 export default Congrats
