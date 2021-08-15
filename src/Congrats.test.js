@@ -1,18 +1,30 @@
-import React from "react";
-import Enzyme, { shallow } from "enzyme";
-import EnzymeAdapter from "enzyme-adapter-react-17-updated";
-import Congrats from "./Congrats";
+import React from 'react'
+import Enzyme, { shallow } from 'enzyme'
+import EnzymeAdapter from 'enzyme-adapter-react-17-updated'
+import Congrats from './Congrats'
 
-import { findByTestAttr } from "../test/testUtils";
+import { findByTestAttr } from '../test/testUtils'
 
-Enzyme.configure({ adapter: new EnzymeAdapter() });
+Enzyme.configure({ adapter: new EnzymeAdapter() })
 
 const setup = (props = {}) => {
-  return shallow(<Congrats {...props} />);
-};
+	return shallow(<Congrats {...props} />)
+}
 
-test("renders without errors", () => {});
+test('renders without errors', () => {
+	const wrapper = setup()
+	const component = findByTestAttr(wrapper, 'component-congrats')
+	expect(component.length).toBe(1)
+})
 
-test("renders no test when `success` props is false", () => {});
+test('renders no test when `success` props is false', () => {
+	const wrapper = setup({ success: false })
+	const component = findByTestAttr(wrapper, 'component-congrats')
+	expect(component.text()).toBe('')
+})
 
-test("renders no-empty congrats message when `success` props is true", () => {});
+test('renders no-empty congrats message when `success` props is true', () => {
+	const wrapper = setup({ success: true })
+	const component = findByTestAttr(wrapper, 'component-congrats')
+	expect(component.text().length).not.toBe(0)
+})
