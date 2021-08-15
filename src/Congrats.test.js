@@ -1,14 +1,15 @@
 import React from 'react'
-import Enzyme, { shallow } from 'enzyme'
-import EnzymeAdapter from 'enzyme-adapter-react-17-updated'
+import { shallow } from 'enzyme'
 import Congrats from './Congrats'
-
 import { findByTestAttr, checkProps } from '../test/testUtils'
 
-Enzyme.configure({ adapter: new EnzymeAdapter() })
+const defaultProps = {
+	success: false,
+}
 
-const setup = (props = {}) => {
-	return shallow(<Congrats {...props} />)
+const setup = (props) => {
+	const setupProps = { ...defaultProps, ...props }
+	return shallow(<Congrats {...setupProps} />)
 }
 
 test('renders without errors', () => {
