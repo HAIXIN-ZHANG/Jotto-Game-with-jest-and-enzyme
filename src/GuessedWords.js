@@ -6,7 +6,9 @@ class GuessedWords extends React.Component {
 		let contents
 		if (this.props.guessedWords.length === 0) {
 			contents = (
-				<span data-test="guessed-instruction">Try to guess some word!</span>
+				<span data-test="guessed-instruction">
+					Try to guess the secret word!
+				</span>
 			)
 		} else {
 			const guessedWordRows = this.props.guessedWords.map((word, index) => {
@@ -21,13 +23,13 @@ class GuessedWords extends React.Component {
 			contents = (
 				<div data-test="guessed-words">
 					<h3> Guessed Words</h3>
-					<table>
-						<thread>
+					<table className="table table-sm">
+						<thead className="thead-light">
 							<tr>
 								<th>Guess</th>
 								<th>Matching Letter</th>
 							</tr>
-						</thread>
+						</thead>
 						<tbody>{guessedWordRows}</tbody>
 					</table>
 				</div>

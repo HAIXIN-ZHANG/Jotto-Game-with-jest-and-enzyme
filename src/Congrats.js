@@ -26,7 +26,7 @@ class Congrats extends React.Component {
 	render() {
 		if (this.props.success) {
 			return (
-				<div data-test="component-congrats">
+				<div data-test="component-congrats" className="alert alert-success">
 					<span data-test="component-message">
 						Congratulations! You guessed the world!
 					</span>
