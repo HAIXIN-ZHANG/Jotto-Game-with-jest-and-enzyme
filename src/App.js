@@ -6,7 +6,7 @@ import Congrats from './Congrats'
 function App() {
 	return (
 		<div className="container">
-			<h1>Jotto</h1>
+			<h1>Jotto Game</h1>
 			<Congrats success={true} />
 			<GuessedWords
 				guessedWords={[
