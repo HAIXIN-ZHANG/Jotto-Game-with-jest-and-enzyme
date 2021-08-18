@@ -1,4 +1,4 @@
-import { correctGuess, guessSecretWord } from './index'
+import { correctGuess, getSecretWord } from './index'
 import moxios from 'moxios'
 import { storeFactory } from '../../test/testUtils'
 
@@ -27,7 +27,7 @@ describe('getSecretWord action creator', () => {
 				response: secretWord,
 			})
 		})
-		return store.dispatch(guessSecretWord()).then(() => {
+		return store.dispatch(getSecretWord()).then(() => {
 			const newState = store.getState()
 			expect(newState.secretWord).toBe(secretWord)
 		})
