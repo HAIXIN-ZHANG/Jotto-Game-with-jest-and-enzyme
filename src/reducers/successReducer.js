@@ -1,6 +1,6 @@
 import { actionTypes } from '../actions'
 
-const successReducer = (state = false, action) => {
+const success = (state = false, action) => {
 	switch (action.type) {
 		case actionTypes.CORRECT_GUESS:
 			return true
@@ -9,4 +9,4 @@ const successReducer = (state = false, action) => {
 	}
 }
 
-export default successReducer
+export default success

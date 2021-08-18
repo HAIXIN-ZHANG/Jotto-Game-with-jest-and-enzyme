@@ -1,6 +1,6 @@
 import { correctGuess, guessSecretWord } from './index'
 import moxios from 'moxios'
-import { storeFactory } from '../test/testUtils'
+import { storeFactory } from '../../test/testUtils'
 
 describe('correctGuess', () => {
 	test('returns an action with type `CORRECT_GUESS`', () => {
