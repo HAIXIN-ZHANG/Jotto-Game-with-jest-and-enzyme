@@ -1,6 +1,6 @@
 import { actionTypes } from '../actions'
 
-const guessedWords = (state = [], action) => {
+const guessedWordReducer = (state = [], action) => {
 	switch (action.type) {
 		case actionTypes.GUESS_WORD:
 			return [...state, action.payload]
@@ -9,4 +9,4 @@ const guessedWords = (state = [], action) => {
 	}
 }
 
-export default guessedWords
+export default guessedWordReducer

@@ -1,8 +1,8 @@
 /* eslint-disable react/forbid-foreign-prop-types */
 import checkPropTypes from 'check-prop-types'
 import { createStore, applyMiddleware } from 'redux'
-import rootReducer from '../src/reducers'
-import { middleware } from '../src/configureStore'
+import rootReducer from '../reducers'
+import { middleware } from '../configureStore'
 
 export const storeFactory = (initialState) => {
 	const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore)
