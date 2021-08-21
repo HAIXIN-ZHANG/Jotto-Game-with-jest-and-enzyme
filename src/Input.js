@@ -4,6 +4,9 @@ import { guessWord } from './actions'
 export class UnconnectedInput extends React.Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			currentGuess: '',
+		}
 		this.inputBox = React.createRef()
 		this.submitGuessedWord = this.submitGuessedWord.bind(this)
 	}
@@ -15,6 +18,7 @@ export class UnconnectedInput extends React.Component {
 		if (guessedWord && guessedWord.length > 0) {
 			this.props.guessWord(guessedWord)
 		}
+		this.inputBox.current.value = ''
 	}
 	render() {
 		const contents = this.props.success ? null : (
@@ -26,6 +30,7 @@ export class UnconnectedInput extends React.Component {
 					id="word-guess"
 					type="text"
 					placeholder="enter guess"
+					onChange={(e) => this.setState({ currentGuess: e.target.value })}
 				/>
 				<button
 					data-test="submit-button"
@@ -33,7 +38,9 @@ export class UnconnectedInput extends React.Component {
 					type="submit"
 					Submit
 					onClick={this.submitGuessedWord}
-				/>
+				>
+					Submit
+				</button>
 			</form>
 		)
 
